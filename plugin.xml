@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android" id="cordova-plugin-zappar-plugin" version="0.0.1">
+   <name>ZapparPlugin</name>
+   <js-module name="ZapparPlugin" src="www/zappar.js">
+      <clobbers target="cordova.plugins.ZapparPlugin" />
+   </js-module>
+   <platform name="android">
+      <config-file parent="/*" target="res/xml/config.xml">
+         <feature name="ZapparPlugin">
+            <param name="android-package" value="cordova.plugin.zapparplugin.ZapparPlugin" />
+         </feature>
+      </config-file>
+      <config-file parent="/*" target="AndroidManifest.xml" />
+      <source-file src="src/android/ZapparPlugin.java" target-dir="src/cordova-plugin-hello-world/ZapparPlugin" />
+   </platform>
+   <platform name="ios">
+      <config-file parent="/*" target="config.xml">
+         <feature name="ZapparPlugin">
+            <param name="ios-package" value="ZapparPlugin" />
+         </feature>
+      </config-file>
+      <source-file src="src/ios/ZapparPlugin.m" />
+   </platform>
+</plugin>
